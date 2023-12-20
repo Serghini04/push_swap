@@ -56,3 +56,21 @@ void print_lst(t_list *lst)
 		i = i->next;
 	}
 }
+
+void	add_front(t_list **lst, t_list *new)
+{
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
+}
+
+
+t_list	*last_lst(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
+}

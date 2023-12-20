@@ -21,4 +21,12 @@ int		size_lst(t_list *lst);
 int		check_res(char *str);
 int 	check_d(t_list *h);
 int 	parsing(char *str, t_list **head);
+void	sa(t_list **head);
+void 	sb(t_list **head);
+void 	ss(t_list **s_a, t_list **s_b);
+void	ra(t_list **head);
+void 	rra(t_list **head);
+t_list	*last_lst(t_list *lst);
+void	add_front(t_list **lst, t_list *new);
+void 	pb(t_list **s_a, t_list **s_b);
 #endif

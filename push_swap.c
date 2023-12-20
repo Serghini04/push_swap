@@ -101,6 +101,7 @@ int main(int ac, char **av)
 {
 	int i = 1;
 	t_list *head = NULL;
+	int size = 0;
 	if (ac == 1)
 		return (0);
 	while (i < ac)
@@ -121,4 +122,10 @@ int main(int ac, char **av)
 		return (-1);
 	print_lst(head);
 	printf("------------Algo-----------\n");
+	size = size_lst(head);
+	if (size == 2)
+		sa(&head);
+	else if (size >= 3)
+		rra(&head);
+	print_lst(head);
 }
