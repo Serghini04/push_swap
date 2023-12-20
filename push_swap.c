@@ -46,7 +46,6 @@ int	ft_atoi(char *str)
 int parsing(char *str, t_list **head)
 {
 	int i = 0;
-	int nb;
 	char **res = ft_split(str, ' ');
 	if (!res)
 		return (0);
@@ -83,6 +82,20 @@ int check_d(t_list *h)
 	}
 	return (1);
 }
+int if_sorted(t_list *head)
+{
+	t_list *i = head;
+	int c = 0;
+	while (i->next)
+	{
+		if (i->data > i->next->data)
+			c = 1;
+		i = i->next;
+	}
+	if (c == 0)
+		return (0);
+	return (1);
+}
 
 int main(int ac, char **av)
 {
@@ -97,10 +110,11 @@ int main(int ac, char **av)
 		}
 		i++;
 	}
-	if (check_d(head) == 0 || size_lst(head) <= 1)
+	if (check_d(head) == 0 || size_lst(head) <= 1 || if_sorted(head) == 0)
 	{
 		write(2, "Error", 6);
 		return (0);
 	}
 	print_lst(head);
+	printf("------------Algo-----------\n");
 }
