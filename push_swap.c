@@ -101,6 +101,9 @@ int main(int ac, char **av)
 {
 	int i = 1;
 	t_list *head = NULL;
+	int size;
+	if (ac == 1)
+		return (0);
 	while (i < ac)
 	{
 		if (parsing(av[i], &head) == 0)
@@ -110,7 +113,10 @@ int main(int ac, char **av)
 		}
 		i++;
 	}
-	if (check_d(head) == 0 || size_lst(head) <= 1 || if_sorted(head) == 0)
+	size = size_lst(head);
+	if (size <= 1)
+		return (0);
+	if (check_d(head) == 0 || if_sorted(head) == 0)
 	{
 		write(2, "Error", 6);
 		return (0);
