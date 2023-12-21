@@ -11,6 +11,7 @@ void rra(t_list **head)
 	j->next = NULL;
 	i->next = *head;
 	*head = i;
+	write(1, "rra\n", 4);
 }
 void rrb(t_list **head)
 {
@@ -23,6 +24,7 @@ void rrb(t_list **head)
 	j->next = NULL;
 	i->next = *head;
 	*head = i;
+	write(1, "rrb\n", 4);
 }
 
 void rrr(t_list	**s_a, t_list **s_b)

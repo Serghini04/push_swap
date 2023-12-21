@@ -37,4 +37,5 @@ void 	print_ind(t_list *h);
 void	part_index(t_list **lst);
 void find_max(t_list **lst, t_list **clone, int *x);
 void	del_max(t_list **clone, int min);
+void	algo3(t_list **head);
 #endif

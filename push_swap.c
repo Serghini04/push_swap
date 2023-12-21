@@ -109,6 +109,7 @@ int if_sorted(t_list *head)
 int main(int ac, char **av)
 {
 	int i = 1;
+	int size;
 	t_list *head = NULL;
 	if (ac == 1)
 		return (0);
@@ -129,5 +130,10 @@ int main(int ac, char **av)
 	if (if_sorted(head) == 0)
 		return (-1);
 	part_index(&head);
-	print_ind(head);
+	size = size_lst(head);
+	if (size == 2)
+		sa(&head);
+	else if (size == 3)
+		algo3(&head);
+	print_lst(head);
 }
