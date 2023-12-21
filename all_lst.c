@@ -65,6 +65,45 @@ void	add_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
+void	clr_all(t_list **lst)
+{
+	t_list	*i;
+	t_list	*swap;
+
+	if (!lst)
+		return ;
+	i = *lst;
+	while (i)
+	{
+		swap = i;
+		i = i->next;
+		free(i);
+	}
+	*lst = NULL;
+}
+void print_ind(t_list *h)
+{
+	while (h)
+	{
+		printf("x = %d	==>	data = %d\n", h->i, h->data);
+		h = h->next;
+	}
+}
+
+t_list	*lst_map(t_list *lst)
+{
+	t_list *new;
+
+	new = NULL;
+	while(lst)
+	{
+		add_back(&new, new_node(lst->data));
+		lst = lst->next;
+	}
+	return (new);
+}
+
+
 
 t_list	*last_lst(t_list *lst)
 {

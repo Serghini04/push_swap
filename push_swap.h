@@ -8,6 +8,7 @@
 
 typedef struct s_list
 {
+	int				i;
 	int				data;
 	struct s_list	*next;
 }	t_list;
@@ -29,4 +30,11 @@ void 	rra(t_list **head);
 t_list	*last_lst(t_list *lst);
 void	add_front(t_list **lst, t_list *new);
 void 	pb(t_list **s_a, t_list **s_b);
+t_list	*lst_map(t_list *lst);
+void	clr_one(t_list *lst);
+void	clr_all(t_list **lst);
+void 	print_ind(t_list *h);
+void	part_index(t_list **lst);
+void find_max(t_list **lst, t_list **clone, int *x);
+void	del_max(t_list **clone, int min);
 #endif
