@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/23 16:09:52 by meserghi          #+#    #+#             */
+/*   Updated: 2023/12/23 16:09:56 by meserghi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
@@ -38,4 +49,9 @@ void	part_index(t_list **lst);
 void find_max(t_list **lst, t_list **clone, int *x);
 void	del_max(t_list **clone, int min);
 void	algo3(t_list **head);
+void	algo4(t_list **s_a, t_list **s_b);
+void	algo5(t_list **s_a, t_list **s_b);
+void algo(t_list **s_a, t_list **s_b, int size);
+void 	pa(t_list **s_a, t_list **s_b);
+void	algo_more(t_list **s_a, t_list **s_b);
 #endif

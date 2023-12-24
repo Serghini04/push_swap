@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/23 16:10:24 by meserghi          #+#    #+#             */
+/*   Updated: 2023/12/23 21:08:49 by meserghi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "push_swap.h"
 
 int	check_res(char *str)
@@ -109,8 +123,8 @@ int if_sorted(t_list *head)
 int main(int ac, char **av)
 {
 	int i = 1;
-	int size;
 	t_list *head = NULL;
+	t_list *s_b = NULL;
 	if (ac == 1)
 		return (0);
 	while (i < ac)
@@ -129,11 +143,5 @@ int main(int ac, char **av)
 	}
 	if (if_sorted(head) == 0)
 		return (-1);
-	part_index(&head);
-	size = size_lst(head);
-	if (size == 2)
-		sa(&head);
-	else if (size == 3)
-		algo3(&head);
-	print_lst(head);
+	algo(&head, &s_b, size_lst(head));
 }

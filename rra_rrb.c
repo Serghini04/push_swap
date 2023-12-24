@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rra_rrb.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/12/23 16:09:27 by meserghi          #+#    #+#             */
+/*   Updated: 2023/12/23 16:09:31 by meserghi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void rra(t_list **head)
@@ -27,7 +39,7 @@ void rrb(t_list **head)
 	write(1, "rrb\n", 4);
 }
 
-void rrr(t_list	**s_a, t_list **s_b)
+void	rrr(t_list	**s_a, t_list **s_b)
 {
 	rra(s_a);
 	rra(s_b);
