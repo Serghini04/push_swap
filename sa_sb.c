@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:07:50 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/23 16:07:51 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/25 17:29:30 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void sb(t_list **head)
 
 void ss(t_list **s_a, t_list **s_b)
 {
+	if (!s_a || !s_b)
+		return ;
 	sa(s_a);
 	sb(s_b);
 }

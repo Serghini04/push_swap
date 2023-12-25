@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:01 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/23 16:09:04 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/25 17:28:11 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ra(t_list **head)
 {
 	t_list	*tmp;
 
+	if (!head)
+		return ;
 	tmp = (*head);
 	(*head) = (*head)->next;
 	tmp->next = 0;
@@ -28,6 +30,8 @@ void	rb(t_list **head)
 {
 	t_list	*tmp;
 
+	if (!head)
+		return ;
 	tmp = (*head);
 	(*head) = (*head)->next;
 	tmp->next = 0;
@@ -37,6 +41,8 @@ void	rb(t_list **head)
 
 void	rr(t_list **s_a, t_list **s_b)
 {
+	if (!s_a || !s_b)
+		return ;
 	ra(s_a);
 	rb(s_b);
 }
