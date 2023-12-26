@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:10:24 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/25 17:43:04 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/26 18:12:54 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,5 +142,4 @@ int main(int ac, char **av)
 	if (if_sorted(head) == 0)
 		return (-1);
 	algo(&head, &s_b, size_lst(head));
-	print_lst(head);
 }

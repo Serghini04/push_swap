@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:52 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/25 17:57:57 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/26 18:55:56 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	add_back(t_list **lst, t_list *new);
 t_list	*new_node(int data);
 void	print_lst(t_list *lst);
 int		size_lst(t_list *lst);
+int if_sorted(t_list *head);
 int		check_res(char *str);
 int 	check_d(t_list *h);
 int 	parsing(char *str, t_list **head);
@@ -38,6 +39,7 @@ void 	sb(t_list **head);
 void 	ss(t_list **s_a, t_list **s_b);
 void	ra(t_list **head);
 void	rb(t_list **head);
+void rrb(t_list **head);
 void	rr(t_list **s_a, t_list **s_b);
 void 	rra(t_list **head);
 t_list	*last_lst(t_list *lst);
@@ -50,7 +52,7 @@ void 	print_ind(t_list *h);
 void	part_index(t_list **lst);
 void find_max(t_list **lst, t_list **clone, int *x);
 void	del_max(t_list **clone, int min);
-void	algo3(t_list **head);
+void	algo3(t_list **h);
 void	algo4(t_list **s_a, t_list **s_b);
 void	algo5(t_list **s_a, t_list **s_b);
 void algo(t_list **s_a, t_list **s_b, int size);

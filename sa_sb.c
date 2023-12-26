@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:07:50 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/25 17:29:30 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/26 19:26:16 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 void sa(t_list **head)
 {
-	int	tmp;
+	t_list	*tmp;
 
 	if (!head || !(*head)->next)
 		return ;
-	tmp = (*head)->data;
-	(*head)->data = (*head)->next->data;
-	(*head)->next->data = tmp;
+	tmp = *head;
+	(*head)->data = (*head)->next;
+	(*head)->next = tmp;
 	write(1, "sa\n", 3);
 }
 

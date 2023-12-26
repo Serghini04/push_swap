@@ -6,39 +6,28 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 22:11:02 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/25 18:36:28 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/26 19:27:59 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algo3(t_list **head)
+void	algo3(t_list **h)
 {
-	part_index(head);
-	if ((*head)->i == 0 && (*head)->next->i == 1 && (*head)->next->next->i == 2)
-		return ;
-	if ((*head)->i == 0)
+	t_list *top = *h;
+	t_list *last= (*h)->next->next;
+	if (top->data > top->next->data && top->data > last->data)
 	{
-		sa(head);
-		ra(head);
+		ra(h);
+		top = *h;
 	}
-	else if ((*head)->i == 1)
+	else if (top->next->data > top->data && top->next->data > last->data)
 	{
-		if ((*head)->next->i == 0)
-			sa(head);
-		else
-			rra(head);
+		rra(h);
+		top = *h;
 	}
-	else if ((*head)->i == 2)
-	{
-		if ((*head)->next->i == 0)
-			ra(head);
-		else if ((*head)->next->i == 1)
-		{
-			sa(head);
-			rra(head);
-		}
-	}
+	if (top->data > top->next->data)
+		sa(h);
 }
 
 void	algo4(t_list **s_a, t_list **s_b)
@@ -53,7 +42,6 @@ void	algo4(t_list **s_a, t_list **s_b)
 
 void	algo5(t_list **s_a, t_list **s_b)
 {
-	part_index(s_a);
 	if (!s_a || !s_b)
 		return ;
 	if ((*s_a)->next->i == 0)
@@ -72,7 +60,6 @@ void	master_algo(t_list **s_a, t_list **s_b)
 	int v1 = 0;
 	int v2 = 0;
 	int lv1 = -1;
-	part_index(s_a);
 	v1 = size_lst(*s_a) / 3 + v1;
 	v2 = size_lst(*s_b) / 6 + v1;
 	while(size_lst(*s_a) > 3)
@@ -95,22 +82,53 @@ void	master_algo(t_list **s_a, t_list **s_b)
 }
 void	finito(t_list **s_a, t_list **s_b)
 {
+	int v = 0;
 	while (size_lst(*s_b))
 	{
-		if ((*s_b)->i == (*s_a)->i - 1 || (*s_a)->i - 1 == last_lst(*s_b)->i)
+		if ((*s_a)->i - 1 == (*s_b)->i)
 			pa(s_a, s_b);
-		else
+		else if (last_lst(*s_b)->i == (*s_a)->i - 1)
+		{
+			rrb(s_b);
+			pa(s_a, s_b);
+		}
+		else if (!v)
 		{
 			pa(s_a, s_b);
 			ra(s_a);
+			v++;
 		}
-		if (last_lst(*s_a)->i == (*s_a)->i - 1)
+		else if (v && last_lst(*s_a)->i == (*s_a)->i - 1)
+		{
 			rra(s_a);
+			v--;
+		}
+		else if (v && last_lst(*s_a)->i < (*s_b)->i)
+		{
+			pa(s_a, s_b);
+			ra(s_a);
+			v++;
+		}
+		else if (v && last_lst(*s_a)->i < last_lst(*s_b)->i)
+		{
+			rrb(s_b);
+			pa(s_a, s_b);
+			ra(s_a);
+			v++;
+		}
+		else
+		{
+			if ((*s_a)->i - 1 != (*s_b)->i)
+			{
+				rb(s_b);
+			}
+		}
 	}
 }
 
 void algo(t_list **s_a, t_list **s_b, int size)
 {
+	part_index(s_a);
 	if (size == 2)
 		return sa(s_a);
 	else if (size == 3)
@@ -122,5 +140,6 @@ void algo(t_list **s_a, t_list **s_b, int size)
 	else
 		master_algo(s_a, s_b);
 	algo3(s_a);
-	finito(s_a, s_b);
+	print_ind(*s_a);
+	//finito(s_a, s_b);
 }
