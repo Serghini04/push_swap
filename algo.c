@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 22:11:02 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/26 22:16:20 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/26 22:50:14 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ void	master_algo(t_list **s_a, t_list **s_b)
 	int v1 = 0;
 	int v2;
 	int lv1 = -1;
-	v1 = size_lst(*s_a) / 3 + v1;
-	v2 = size_lst(*s_a) / 6 + v1;
+	v2 = size_lst(*s_a) / 6;
+	v1 = size_lst(*s_a) / 3;
 	while(size_lst(*s_a) > 3)
 	{
 		if (size_lst(*s_b) > 1 && (*s_b)->i < v2 && (*s_b)->i > lv1 && (*s_a)->i >= v1)
@@ -75,8 +75,8 @@ void	master_algo(t_list **s_a, t_list **s_b)
 		if (size_lst(*s_b) == v1)
 		{
 			lv1 = v1;
-			v2 = size_lst(*s_a) / 6 + v1;
-			v1 += size_lst(*s_a) / 3;
+			v2 = (size_lst(*s_a) / 6) + v1;
+			v1 += (size_lst(*s_a) / 3);
 		}
 	}
 }
@@ -140,11 +140,8 @@ void algo(t_list **s_a, t_list **s_b, int size)
 		return algo5(s_a, s_b);
 	else
 		master_algo(s_a, s_b);
-	exit(0);
 	algo3(s_a);
-
 	finito(s_a, s_b);
 	while ((*s_a)->i - 1 == last_lst(*s_a)->i)
 		rra(s_a);
-	print_lst(*s_a);
 }
