@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:10:24 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/26 18:12:54 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/26 21:59:25 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ int parsing(char *str, t_list **head)
 		add_back(head, new_node(nb));
 		i++;
 	}
-	clean_split(res);
+
+
 	return (1);
 }
 int check_d(t_list *h)
@@ -142,4 +143,5 @@ int main(int ac, char **av)
 	if (if_sorted(head) == 0)
 		return (-1);
 	algo(&head, &s_b, size_lst(head));
+	print_ind(head);
 }

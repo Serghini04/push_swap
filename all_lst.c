@@ -103,7 +103,18 @@ t_list	*lst_map(t_list *lst)
 	return (new);
 }
 
-
+int ltaht(t_list *s_b, int pos)
+{
+	int s = size_lst(s_b) / 2;
+	while (s)
+	{
+		if (s_b->i == pos)
+			return (0);
+		s_b = s_b->next;
+		s--;
+	}
+	return (1);
+}
 
 t_list	*last_lst(t_list *lst)
 {
