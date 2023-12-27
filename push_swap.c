@@ -6,91 +6,18 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:10:24 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/26 22:30:21 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/27 18:57:50 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
 #include "push_swap.h"
 
-int	check_res(char *str)
+int	check_d(t_list *h)
 {
-	int i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (!(str[i] >= '0' && str[i] <= '9'))
-			return(0);
-		i++;
-	}
-	return (1);
-}
+	t_list	*i;
+	t_list	*j;
 
-long	ft_atoi(char *str)
-{
-	int	i;
-	long	res;
-	int	s;
-
-	i = 0;
-	res = 0;
-	s = 1;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			s = -s;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - 48;
-		i++;
-	}
-	return (s * res);
-}
-
-void	clean_split(char **arr)
-{
-	int i = 0;
-	if (!arr)
-		return ;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
-}
-
-int parsing(char *str, t_list **head)
-{
-	int		i = 0;
-	long	nb;
-	char **res = ft_split(str, ' ');
-	if (!res)
-		return (0);
-	while (res[i])
-	{
-		if (check_res(res[i]) == 0)
-			return (clean_split(res), 0);
-		if (res[i][0] == '-' || res[i][0] == '+')
-		{
-			if (res[i][1] == '\0')
-				return (clean_split(res), 0);
-		}
-		nb = ft_atoi(res[i]);
-		if (!(nb >= -2147483648 && nb <= 2147483647))
-			return (clean_split(res), 0);
-		add_back(head, new_node(nb));
-		i++;
-	}
-
-
-	return (1);
-}
-int check_d(t_list *h)
-{
-	t_list *i = h;
-	t_list *j;
+	i = h;
 	while (i)
 	{
 		j = i->next;
@@ -104,10 +31,14 @@ int check_d(t_list *h)
 	}
 	return (1);
 }
-int if_sorted(t_list *head)
+
+int	if_sorted(t_list *head)
 {
-	t_list *i = head;
-	int c = 0;
+	t_list	*i;
+	int		c;
+
+	i = head;
+	c = 0;
 	while (i->next)
 	{
 		if (i->data > i->next->data)
@@ -118,29 +49,34 @@ int if_sorted(t_list *head)
 		return (0);
 	return (1);
 }
-
-int main(int ac, char **av)
+void f(void)
 {
-	int i = 1;
-	t_list *head = NULL;
-	t_list *s_b = NULL;
+	system("leaks push_swap");
+}
+
+int	main(int ac, char **av)
+{
+	int		i;
+	t_list	*head;
+	t_list	*s_b;
+
+	i = 1;
+	atexit(f);
+	head = NULL;
+	s_b = NULL;
 	if (ac == 1)
 		return (0);
 	while (i < ac)
 	{
 		if (parsing(av[i], &head) == 0)
-		{
-			write(2, "Error\n", 6);
-			return (-1);
-		}
+			(write(2, "Error\n", 6), exit(-1));
 		i++;
 	}
 	if (!head || check_d(head) == 0)
-	{
-		write(2, "Error\n", 6);
-		return (-1);
-	}
+		(write(2, "Error\n", 6), clr_all(&head), exit(-1));
 	if (if_sorted(head) == 0)
-		return (-1);
+		(clr_all(&head), exit(-1));
 	algo(&head, &s_b, size_lst(head));
+	clr_all(&head);
+	return (0);
 }

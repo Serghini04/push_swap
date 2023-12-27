@@ -6,11 +6,11 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 11:25:51 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/19 20:31:03 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/27 17:48:07 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	count_word(char *str, char c)
 {

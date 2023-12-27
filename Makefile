@@ -1,16 +1,8 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/21 12:10:40 by meserghi          #+#    #+#              #
-#    Updated: 2023/12/25 21:25:12 by meserghi         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+SRC = instra/pa_pb.c instra/ra_rb.c instra/rra_rrb.c instra/sa_sb.c\
+	Algo/algo.c Algo/algo3.c Algo/algo4_5.c push_swap.c\
+	utils/all_lst.c utils/ft_split.c utils/ft_atoi.c utils/indexing.c\
+	utils/parsing.c
 
-SRC = pa_pb.c ra_rb.c rra_rrb.c sa_sb.c all_lst.c ft_split.c push_swap.c indexing.c algo.c
 EXE = push_swap
 FLAGS = -Wall -Wextra -Werror
 

@@ -6,17 +6,17 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:07:50 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/26 20:47:33 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/27 16:58:15 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../push_swap.h"
 
-#include "push_swap.h"
-
-void sa(t_list **head)
+void	sa(t_list **head)
 {
 	t_list	*curr;
 	t_list	*next_node;
+
 	if (!head || !(*head)->next)
 		return ;
 	curr = (*head);
@@ -27,10 +27,11 @@ void sa(t_list **head)
 	write(1, "sa\n", 3);
 }
 
-void sb(t_list **head)
+void	sb(t_list **head)
 {
 	t_list	*curr;
 	t_list	*next_node;
+
 	if (!head || !(*head)->next)
 		return ;
 	curr = (*head);
@@ -41,7 +42,7 @@ void sb(t_list **head)
 	write(1, "sb\n", 3);
 }
 
-void ss(t_list **s_a, t_list **s_b)
+void	ss(t_list **s_a, t_list **s_b)
 {
 	if (!s_a || !s_b)
 		return ;
