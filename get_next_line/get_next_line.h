@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 19:15:33 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/27 20:32:22 by meserghi         ###   ########.fr       */
+/*   Created: 2023/11/11 17:58:50 by meserghi          #+#    #+#             */
+/*   Updated: 2023/12/03 14:23:08 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_BONUS_H
-#define PUSH_SWAP_BONUS_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <unistd.h>
+# include <stdio.h>
 # include <stdlib.h>
+# include <string.h>
+# include <fcntl.h>
 
-typedef struct s_list
-{
-	int				i;
-	int				data;
-	struct s_list	*next;
-}	t_list;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
-//utils
-int		parsing(char *str, t_list **head);
-
+int		ft_check(char *str);
+char	*get_next_line(int fd);
+char	*next_line(char *str);
+char	*clean_res(char *str);
+char	*ft_get_read(int fd, char *res);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_fill(char *s1, char *s2, char *res);
+int		ft_strlen(char *s);
 
 #endif
