@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:14:57 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 13:23:07 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:18:57 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ int	check_instra(char *str, t_list **s_a, t_list **s_b)
 		pa(s_a, s_b);
 	else if (!ft_strcmp(str, "pb\n"))
 		pb(s_a, s_b);
+	else if (!ft_strcmp(str, "sa\n"))
+		sa(s_a);
+	else if (!ft_strcmp(str, "sb\n"))
+		sb(s_b);
 	else if (!ft_strcmp(str, "ra\n"))
 		ra(s_a);
 	else if (!ft_strcmp(str, "rb\n"))
@@ -68,7 +72,7 @@ int main(int ac, char **av)
 	if (if_sorted(s_a) == 1 && !s_b)
 			write(1, "OK\n", 3);
 	else
-		write(1, "OK\n", 3);
+		write(1, "KO\n", 3);
 	clr_all(&s_a);
 	clr_all(&s_b);
 	return (0);

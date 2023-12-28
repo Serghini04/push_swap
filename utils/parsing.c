@@ -6,11 +6,25 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:06:58 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 13:33:16 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 15:10:12 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	if_sorted(t_list *head)
+{
+	t_list	*i;
+
+	i = head;
+	while (i->next)
+	{
+		if (i->data > i->next->data)
+			return (0);
+		i = i->next;
+	}
+	return (1);
+}
 
 int		check_d(t_list *h)
 {

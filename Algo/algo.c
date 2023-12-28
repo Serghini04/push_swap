@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/22 22:11:02 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/27 16:37:52 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:22:13 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,13 @@ void	master_algo(t_list **s_a, t_list **s_b)
 	{
 		if (size_lst(*s_b) > 1 && (*s_b)->i < v2 \
 						&& (*s_b)->i > lv1 && (*s_a)->i >= v1)
-			rr(s_a, s_b);
+			rr(s_a, s_b, 1);
 		else if (size_lst(*s_b) > 1 && (*s_b)->i < v2 && (*s_b)->i > lv1)
-			rb(s_b);
+			rb(s_b, 1);
 		if ((*s_a)->i < v1)
-			pb(s_a, s_b);
+			pb(s_a, s_b, 1);
 		else
-			ra(s_a);
+			ra(s_a, 1);
 		if (size_lst(*s_b) == v1)
 			update(s_a, &lv1, &v1, &v2);
 	}
@@ -68,23 +68,23 @@ void	finito(t_list **s_a, t_list **s_b)
 	while (size_lst(*s_b))
 	{
 		if ((*s_a)->i - 1 == (*s_b)->i)
-			pa(s_a, s_b);
+			pa(s_a, s_b, 1);
 		else if (last_lst(*s_b)->i == (*s_a)->i - 1)
-			(rrb(s_b), pa(s_a, s_b));
+			(rrb(s_b, 1), pa(s_a, s_b, 1));
 		else if (!v)
-			(pa(s_a, s_b), ra(s_a), v++);
+			(pa(s_a, s_b, 1), ra(s_a, 1), v++);
 		else if (last_lst(*s_a)->i == (*s_a)->i - 1)
-			(rra(s_a), v--);
+			(rra(s_a, 1), v--);
 		else if (last_lst(*s_a)->i < (*s_b)->i)
-			(pa(s_a, s_b), ra(s_a), v++);
+			(pa(s_a, s_b, 1), ra(s_a, 1), v++);
 		else if (last_lst(*s_a)->i < last_lst(*s_b)->i)
-			(rrb(s_b), pa(s_a, s_b), ra(s_a), v++);
+			(rrb(s_b, 1), pa(s_a, s_b, 1), ra(s_a, 1), v++);
 		else
 		{
 			if (ltaht(*s_b, (*s_a)->i - 1) == 1)
-				rrb(s_b);
+				rrb(s_b, 1);
 			else
-				rb(s_b);
+				rb(s_b, 1);
 		}
 	}
 }
@@ -93,7 +93,7 @@ void	algo(t_list **s_a, t_list **s_b, int size)
 {
 	part_index(s_a);
 	if (size == 2)
-		sa(s_a);
+		sa(s_a, 1);
 	else if (size == 3)
 		algo3(s_a);
 	else if (size == 4)
@@ -106,6 +106,6 @@ void	algo(t_list **s_a, t_list **s_b, int size)
 		algo3(s_a);
 		finito(s_a, s_b);
 		while ((*s_a)->i - 1 == last_lst(*s_a)->i)
-			rra(s_a);
+			rra(s_a, 1);
 	}
 }

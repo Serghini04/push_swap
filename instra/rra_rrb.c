@@ -6,50 +6,50 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:27 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/27 16:56:33 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:14:40 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	rra(t_list **head)
+void	rra(t_list **head, int bonus)
 {
 	t_list	*i;
 	t_list	*j;
 
-	j = *head;
-	if (!head)
+	if (!head ||!*head || size_lst(*head) < 1)
 		return ;
+	j = *head;
 	i = last_lst(*head);
 	while (j->next->next)
 		j = j->next;
 	j->next = NULL;
 	i->next = *head;
 	*head = i;
-	write(1, "rra\n", 4);
+	if (bonus == 1)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_list **head)
+void	rrb(t_list **head, int bonus)
 {
 	t_list	*i;
 	t_list	*j;
 
-	j = *head;
-	if (!head)
+	if (!head ||!*head || size_lst(*head) < 1)
 		return ;
+	j = *head;
 	i = last_lst(*head);
 	while (j->next->next)
 		j = j->next;
 	j->next = NULL;
 	i->next = *head;
 	*head = i;
-	write(1, "rrb\n", 4);
+	if (bonus == 1)
+		write(1, "rrb\n", 4);
 }
 
-void	rrr(t_list	**s_a, t_list **s_b)
+void	rrr(t_list	**s_a, t_list **s_b, int bonus)
 {
-	if (!s_a || !s_b)
-		return ;
-	rra(s_a);
-	rra(s_b);
+	rra(s_a, bonus);
+	rrb(s_b, bonus);
 }

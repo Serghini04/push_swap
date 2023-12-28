@@ -6,13 +6,29 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:07:50 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/27 16:58:15 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:16:44 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa(t_list **head)
+void	sa(t_list **head, int bonus)
+{
+	t_list	*curr;
+	t_list	*next_node;
+
+	if (!head || !(*head)->next || size_lst(*head) < 1)
+		return ;
+	curr = (*head);
+	next_node = (*head)->next;
+	curr->next = (*head)->next->next;
+	*head = next_node;
+	(*head)->next = curr;
+	if (bonus == 1)
+		write(1, "sa\n", 3);
+}
+
+void	sb(t_list **head, int bonus)
 {
 	t_list	*curr;
 	t_list	*next_node;
@@ -24,28 +40,14 @@ void	sa(t_list **head)
 	curr->next = (*head)->next->next;
 	*head = next_node;
 	(*head)->next = curr;
-	write(1, "sa\n", 3);
+	if (bonus == 1)
+		write(1, "sb\n", 3);
 }
 
-void	sb(t_list **head)
-{
-	t_list	*curr;
-	t_list	*next_node;
-
-	if (!head || !(*head)->next)
-		return ;
-	curr = (*head);
-	next_node = (*head)->next;
-	curr->next = (*head)->next->next;
-	*head = next_node;
-	(*head)->next = curr;
-	write(1, "sb\n", 3);
-}
-
-void	ss(t_list **s_a, t_list **s_b)
+void	ss(t_list **s_a, t_list **s_b, int bonus)
 {
 	if (!s_a || !s_b)
 		return ;
-	sa(s_a);
-	sb(s_b);
+	sa(s_a, bonus);
+	sb(s_b, bonus);
 }

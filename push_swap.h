@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:52 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 13:35:43 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:17:34 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct s_list
 {
@@ -32,17 +33,17 @@ void	algo(t_list **s_a, t_list **s_b, int size);
 void	algo_more(t_list **s_a, t_list **s_b);
 int		ltaht(t_list *s_b, int pos);
 //Instra
-void	sa(t_list **head);
-void	sb(t_list **head);
-void	ss(t_list **s_a, t_list **s_b);
-void	ra(t_list **head);
-void	rb(t_list **head);
-void	rrb(t_list **head);
-void	rr(t_list **s_a, t_list **s_b);
-void	pb(t_list **s_a, t_list **s_b);
-void	pa(t_list **s_a, t_list **s_b);
-void	rra(t_list **head);
-void	rrr(t_list	**s_a, t_list **s_b);
+void	sa(t_list **head, int bonus);
+void	sb(t_list **head, int bonus);
+void	ss(t_list **s_a, t_list **s_b, int bonus);
+void	ra(t_list **head, int bonus);
+void	rb(t_list **head, int bonus);
+void	rrb(t_list **head, int bonus);
+void	rr(t_list **s_a, t_list **s_b, int bonus);
+void	pb(t_list **s_a, t_list **s_b, int bonus);
+void	pa(t_list **s_a, t_list **s_b, int bonus);
+void	rra(t_list **head, int bonus);
+void	rrr(t_list	**s_a, t_list **s_b, int bonus);
 //utils
 
 long	ft_atoi(char *str);
