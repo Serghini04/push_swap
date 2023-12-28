@@ -6,31 +6,11 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:10:24 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/27 18:57:50 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 13:33:25 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	check_d(t_list *h)
-{
-	t_list	*i;
-	t_list	*j;
-
-	i = h;
-	while (i)
-	{
-		j = i->next;
-		while (j)
-		{
-			if (i->data == j->data)
-				return (0);
-			j = j->next;
-		}
-		i = i->next;
-	}
-	return (1);
-}
 
 int	if_sorted(t_list *head)
 {
@@ -49,10 +29,6 @@ int	if_sorted(t_list *head)
 		return (0);
 	return (1);
 }
-void f(void)
-{
-	system("leaks push_swap");
-}
 
 int	main(int ac, char **av)
 {
@@ -61,7 +37,6 @@ int	main(int ac, char **av)
 	t_list	*s_b;
 
 	i = 1;
-	atexit(f);
 	head = NULL;
 	s_b = NULL;
 	if (ac == 1)

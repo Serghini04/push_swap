@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 19:15:33 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 12:56:30 by meserghi         ###   ########.fr       */
+/*   Created: 2023/12/27 22:20:03 by meserghi          #+#    #+#             */
+/*   Updated: 2023/12/28 13:03:50 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PUSH_SWAP_BONUS_H
-#define PUSH_SWAP_BONUS_H
+#include "../push_swap_bonus.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "get_next_line/get_next_line.h"
-# include "push_swap.h"
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
 
-//Utils
-int	check_instra(char *str, t_list **s_a, t_list **s_b);
-int	ft_strcmp(char *s1, char *s2);
-
-#endif
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	return (0);
+}

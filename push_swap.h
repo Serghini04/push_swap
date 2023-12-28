@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:52 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/27 20:20:04 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 13:35:43 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	rr(t_list **s_a, t_list **s_b);
 void	pb(t_list **s_a, t_list **s_b);
 void	pa(t_list **s_a, t_list **s_b);
 void	rra(t_list **head);
-
+void	rrr(t_list	**s_a, t_list **s_b);
 //utils
 
 long	ft_atoi(char *str);

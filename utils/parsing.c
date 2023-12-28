@@ -6,11 +6,31 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:06:58 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/27 18:17:43 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 13:33:16 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int		check_d(t_list *h)
+{
+	t_list	*i;
+	t_list	*j;
+
+	i = h;
+	while (i)
+	{
+		j = i->next;
+		while (j)
+		{
+			if (i->data == j->data)
+				return (0);
+			j = j->next;
+		}
+		i = i->next;
+	}
+	return (1);
+}
 
 int	check_res(char *str)
 {
