@@ -6,11 +6,16 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:14:57 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 18:15:50 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 19:53:56 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "push_swap.h"
+
+void f(void)
+{
+	system("leaks checker");
+}
 
 int	check_instra(char *str, t_list **s_a, t_list **s_b)
 {
@@ -41,17 +46,18 @@ int	check_instra(char *str, t_list **s_a, t_list **s_b)
 	return (1);
 }
 
-
 int main(int ac, char **av)
 {
 	t_list	*s_a;
 	t_list	*s_b;
+	t_list	*head;
 	char	*instra;
 	int		i;
 
 	i = 1;
 	s_a = NULL;
 	s_b = NULL;
+	head = NULL;
 	if (ac == 1)
 		return (0);
 	while (i < ac)

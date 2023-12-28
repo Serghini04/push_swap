@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:06:58 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 15:10:12 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 19:04:57 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	if_sorted(t_list *head)
 	return (1);
 }
 
-int		check_d(t_list *h)
+int	check_d(t_list *h)
 {
 	t_list	*i;
 	t_list	*j;

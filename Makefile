@@ -8,14 +8,30 @@ SRC_BONUS = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c\
 		instra/pa_pb.c instra/ra_rb.c instra/rra_rrb.c instra/sa_sb.c\
 		utils/ft_atoi.c utils/indexing.c utils/parsing.c
 
+OBJ = ${SRC:.c=.o}
+
+OBJ_BONUS = ${SRC_BONUS:.c=.o}
+
 EXE_BONUS = checker
 
-EXE = push_swap
+NAME = push_swap
 
 FLAGS = -Wall -Wextra -Werror
 
-all :
-	cc $(FLAGS) $(SRC) -o $(EXE)
 
-bonus :
-	cc $(FLAGS) $(SRC_BONUS) -o $(EXE_BONUS)
+all : ${NAME}
+
+${NAME} : ${OBJ}
+	cc ${FLAGS} ${OBJ} -o ${NAME}
+
+bonus : ${OBJ_BONUS}
+	cc ${FLAGS} ${OBJ_BONUS} -o ${EXE_BONUS}
+
+%.o : %.c push_swap.h
+	cc ${FLAGS} -c $< -o $@
+
+clean :
+	rm -f ${OBJ} ${OBJ_BONUS}
+
+fclean : clean
+	rm -f ${NAME} ${EXE_BONUS}
