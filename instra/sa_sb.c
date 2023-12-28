@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:07:50 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 17:16:44 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 17:45:42 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sa(t_list **head, int bonus)
 	t_list	*curr;
 	t_list	*next_node;
 
-	if (!head || !(*head)->next || size_lst(*head) < 1)
+	if (!head || !*head || size_lst(*head) < 1)
 		return ;
 	curr = (*head);
 	next_node = (*head)->next;
@@ -33,7 +33,7 @@ void	sb(t_list **head, int bonus)
 	t_list	*curr;
 	t_list	*next_node;
 
-	if (!head || !(*head)->next)
+	if (!head || !*head || size_lst(*head) < 1)
 		return ;
 	curr = (*head);
 	next_node = (*head)->next;

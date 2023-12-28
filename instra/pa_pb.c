@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:21:46 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 17:11:13 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:18:03 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	pa(t_list **s_a, t_list **s_b, int bonus)
 {
 	t_list	*new;
 
-	if (!s_a || !s_b)
+	if (!s_a || !s_b || !*s_b)
 		return ;
 	new = *s_b;
 	*s_b = (*s_b)->next;
@@ -38,7 +38,7 @@ void	pb(t_list **s_a, t_list **s_b, int bonus)
 {
 	t_list	*new;
 
-	if (!s_a || !s_b)
+	if (!s_a || !*s_a || !s_b)
 		return ;
 	new = *s_a;
 	*s_a = (*s_a)->next;

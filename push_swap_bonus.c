@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:14:57 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 15:18:57 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 18:15:50 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,27 @@
 int	check_instra(char *str, t_list **s_a, t_list **s_b)
 {
 	if (!ft_strcmp(str, "pa\n"))
-		pa(s_a, s_b);
+		pa(s_a, s_b, 0);
 	else if (!ft_strcmp(str, "pb\n"))
-		pb(s_a, s_b);
+		pb(s_a, s_b, 0);
 	else if (!ft_strcmp(str, "sa\n"))
-		sa(s_a);
+		sa(s_a, 0);
 	else if (!ft_strcmp(str, "sb\n"))
-		sb(s_b);
+		sb(s_b, 0);
 	else if (!ft_strcmp(str, "ra\n"))
-		ra(s_a);
+		ra(s_a, 0);
 	else if (!ft_strcmp(str, "rb\n"))
-		rb(s_b);
+		rb(s_b, 0);
 	else if (!ft_strcmp(str, "rr\n"))
-		rr(s_a, s_b);
+		rr(s_a, s_b, 0);
 	else if (!ft_strcmp(str, "rra\n"))
-		rra(s_a);
+		rra(s_a, 0);
 	else if (!ft_strcmp(str, "rrb\n"))
-		rrb(s_b);
+		rrb(s_b, 0);
 	else if (!ft_strcmp(str, "rrr\n"))
-		rrr(s_a, s_b);
+		rrr(s_a, s_b, 0);
+	else if (!ft_strcmp(str, "ss\n"))
+		ss(s_a, s_b, 0);
 	else
 		return (0);
 	return (1);
@@ -69,7 +71,7 @@ int main(int ac, char **av)
 			(write(2, "Error\n", 6), exit(-1));
 		free(instra);
 	}
-	if (if_sorted(s_a) == 1 && !s_b)
+	if (!s_b && if_sorted(s_a) == 1)
 			write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
