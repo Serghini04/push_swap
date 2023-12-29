@@ -18,13 +18,14 @@ NAME = push_swap
 
 FLAGS = -Wall -Wextra -Werror
 
-
 all : ${NAME}
+
+bonus :${EXE_BONUS}
 
 ${NAME} : ${OBJ}
 	cc ${FLAGS} ${OBJ} -o ${NAME}
 
-bonus : ${OBJ_BONUS}
+${EXE_BONUS} : ${OBJ_BONUS}
 	cc ${FLAGS} ${OBJ_BONUS} -o ${EXE_BONUS}
 
 %.o : %.c push_swap.h

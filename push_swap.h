@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:52 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 20:01:18 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/28 21:45:49 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void	finito(t_list **s_a, t_list **s_b);
 void	algo(t_list **s_a, t_list **s_b, int size);
 void	algo_more(t_list **s_a, t_list **s_b);
 int		ltaht(t_list *s_b, int pos);
+
 //Instra
 void	sa(t_list **head, int bonus);
 void	sb(t_list **head, int bonus);
@@ -44,8 +45,8 @@ void	pb(t_list **s_a, t_list **s_b, int bonus);
 void	pa(t_list **s_a, t_list **s_b, int bonus);
 void	rra(t_list **head, int bonus);
 void	rrr(t_list	**s_a, t_list **s_b, int bonus);
-//utils
 
+//utils
 long	ft_atoi(char *str);
 char	**ft_split(char const *s, char c);
 void	add_back(t_list **lst, t_list *new);
