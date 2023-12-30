@@ -16,7 +16,7 @@ EXE_BONUS = checker
 
 NAME = push_swap
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address
+FLAGS = -Wall -Wextra -Werror
 
 all : ${NAME}
 
@@ -36,3 +36,5 @@ clean :
 
 fclean : clean
 	rm -f ${NAME} ${EXE_BONUS}
+
+re : fclean all

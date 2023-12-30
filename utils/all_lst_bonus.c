@@ -6,15 +6,17 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 13:45:39 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/29 21:13:38 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/30 18:31:05 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap_bonus.h"
+#include "../push_swap.h"
 
 t_instra	*new_instra(char *data)
 {
-	t_instra	*new = malloc(sizeof(t_instra));
+	t_instra	*new;
+
+	new = malloc(sizeof(t_instra));
 	if (!new)
 		return (NULL);
 	new->data = data;
@@ -43,6 +45,7 @@ void	add_back_instra(t_instra **h, t_instra *new)
 void	clr_instra(t_instra **h)
 {
 	t_instra	*swap;
+
 	while (*h)
 	{
 		swap = (*h)->next;

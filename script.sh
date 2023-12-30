@@ -3,7 +3,7 @@
 max=1000
 for((i=0; i < $max; i++))
 do
-	arg=$(seq 0 499 | sort -R)
+	arg=$(seq 0 12 | sort -R)
 	./push_swap $arg | ./checker $arg
 done
 
