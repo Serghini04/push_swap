@@ -23,7 +23,7 @@ all : ${NAME}
 bonus :${EXE_BONUS}
 
 ${NAME} : ${OBJ}
-	cc ${FLAGS} ${OBJ} -fsanitize=address -o ${NAME}
+	cc ${FLAGS} ${OBJ} -o ${NAME}
 
 ${EXE_BONUS} : ${OBJ_BONUS}
 	cc ${FLAGS} ${OBJ_BONUS} -o ${EXE_BONUS}
