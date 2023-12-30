@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:11:23 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/30 19:11:11 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/30 19:26:37 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ long	ft_atoi(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (res < -2147483648 || res > 2147483647)
-			(write(2, "Error\n", 6), exit(1));
 		res = res * 10 + str[i] - 48;
+		if ((res > 2147483648 && s == -1) || (res > 2147483647 && s == 1))
+			(write(2, "Error\n", 6), exit(1));
 		i++;
 	}
 	return (s * res);

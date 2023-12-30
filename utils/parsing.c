@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:06:58 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/30 19:05:42 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/30 19:25:28 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,6 @@ int	parsing(char *str, t_list **head)
 				return (clean_split(res), 0);
 		}
 		nb = ft_atoi(res[i]);
-		if (!(nb >= -2147483648 && nb <= 2147483647))
-			return (clean_split(res), 0);
 		add_back(head, new_node(nb));
 		i++;
 	}
