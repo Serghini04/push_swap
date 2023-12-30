@@ -4,9 +4,9 @@ SRC = instra/pa_pb.c instra/ra_rb.c instra/rra_rrb.c instra/sa_sb.c\
 	utils/parsing.c
 
 SRC_BONUS = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c\
-		push_swap_bonus.c utils/ft_strcmp.c utils/all_lst.c utils/ft_split.c \
+		push_swap_bonus.c utils/ft_strcmp_bonus.c utils/all_lst.c utils/ft_split.c \
 		instra/pa_pb.c instra/ra_rb.c instra/rra_rrb.c instra/sa_sb.c\
-		utils/ft_atoi.c utils/indexing.c utils/parsing.c
+		utils/ft_atoi.c utils/indexing.c utils/parsing.c utils/all_lst_bonus.c
 
 OBJ = ${SRC:.c=.o}
 
@@ -16,14 +16,14 @@ EXE_BONUS = checker
 
 NAME = push_swap
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 all : ${NAME}
 
 bonus :${EXE_BONUS}
 
 ${NAME} : ${OBJ}
-	cc ${FLAGS} ${OBJ} -o ${NAME}
+	cc ${FLAGS} ${OBJ} -fsanitize=address -o ${NAME}
 
 ${EXE_BONUS} : ${OBJ_BONUS}
 	cc ${FLAGS} ${OBJ_BONUS} -o ${EXE_BONUS}

@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:27 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 17:56:19 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/29 16:35:32 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	rra(t_list **head, int bonus)
 	t_list	*i;
 	t_list	*j;
 
-	if (!head ||!*head || size_lst(*head) < 1)
+	if (!head || !*head || size_lst(*head) <= 1)
 		return ;
 	j = *head;
 	i = last_lst(*head);
@@ -35,7 +35,7 @@ void	rrb(t_list **head, int bonus)
 	t_list	*i;
 	t_list	*j;
 
-	if (!head || size_lst(*head) < 1)
+	if (!head || !*head || size_lst(*head) <= 1)
 		return ;
 	j = *head;
 	i = last_lst(*head);

@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:06:58 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 19:04:57 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/29 16:32:44 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	if_sorted(t_list *head)
 	t_list	*i;
 
 	i = head;
+	if (!head)
+		return (0);
 	while (i->next)
 	{
 		if (i->data > i->next->data)

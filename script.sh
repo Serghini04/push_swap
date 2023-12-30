@@ -4,7 +4,7 @@ max=1000
 for((i=0; i < $max; i++))
 do
 	arg=$(seq 0 499 | sort -R)
-	./push_swap $arg | wc -l
+	./push_swap $arg | ./checker $arg
 done
 
 #wc -l | awk '{if ($1 > 11)print $1, endif}'

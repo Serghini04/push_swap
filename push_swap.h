@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:52 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/28 21:45:49 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/29 21:14:38 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,6 @@ void	clr_all(t_list **lst);
 void	part_index(t_list **lst);
 void	find_max(t_list **lst, t_list **clone, int *x);
 void	del_max(t_list **clone, t_list *max);
-
-//Utils for bonus
-int	check_instra(char *str, t_list **s_a, t_list **s_b);
-int	ft_strcmp(char *s1, char *s2);
-
 
 ///you need to deleted..
 void	print_lst(t_list *lst);
