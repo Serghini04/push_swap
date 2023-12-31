@@ -13,7 +13,7 @@
 #include "../push_swap.h"
 #include <limits.h>
 
-long	ft_atoi(char *str, t_list **head)
+long	ft_atoi(char *str, t_list **head, char **fl)
 {
 	int		i;
 	long	res;
@@ -32,7 +32,7 @@ long	ft_atoi(char *str, t_list **head)
 	{
 		res = res * 10 + str[i] - 48;
 		if ((res > 2147483648 && s == -1) || (res > 2147483647 && s == 1))
-			(write(2, "Error\n", 6), clr_all(head), exit(1));
+			(write(2, "Error\n", 6), clr_all(head), clean_split(fl), exit(1));
 		i++;
 	}
 	return (s * res);

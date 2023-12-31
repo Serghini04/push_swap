@@ -53,7 +53,7 @@ void		rra(t_list **head, int bonus);
 void		rrr(t_list	**s_a, t_list **s_b, int bonus);
 
 //utils
-long		ft_atoi(char *str, t_list **head);
+long		ft_atoi(char *str, t_list **head, char **fl);
 char		**ft_split(char const *s, char c);
 void		add_back(t_list **lst, t_list *new);
 t_list		*new_node(int data);
@@ -70,7 +70,7 @@ void		clr_all(t_list **lst);
 void		part_index(t_list **lst);
 void		find_max(t_list **lst, t_list **clone, int *x);
 void		del_max(t_list **clone, t_list *max);
-
+void		clean_split(char **arr);
 //Bonus
 int			check_instra(char *str, t_list **s_a, t_list **s_b);
 int			ft_strcmp(char *s1, char *s2);

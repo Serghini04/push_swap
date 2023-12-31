@@ -95,7 +95,7 @@ int	parsing(char *str, t_list **head)
 			if (res[i][1] == '\0')
 				return (clean_split(res), clr_all(head), 0);
 		}
-		nb = ft_atoi(res[i], head);
+		nb = ft_atoi(res[i], head, res);
 		add_back(head, new_node(nb));
 		i++;
 	}

@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 	while (i < ac)
 	{
 		if (parsing(av[i], &head) == 0)
-			(write(2, "Error\n", 6),clr_all(&head), exit(-1));
+			(write(2, "Error\n", 6), clr_all(&head), exit(-1));
 		i++;
 	}
 	if (!head || check_d(head) == 0)
