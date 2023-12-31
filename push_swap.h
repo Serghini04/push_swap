@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:52 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/30 18:31:21 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/31 11:58:43 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		rra(t_list **head, int bonus);
 void		rrr(t_list	**s_a, t_list **s_b, int bonus);
 
 //utils
-long		ft_atoi(char *str);
+long		ft_atoi(char *str, t_list **head);
 char		**ft_split(char const *s, char c);
 void		add_back(t_list **lst, t_list *new);
 t_list		*new_node(int data);

@@ -6,14 +6,14 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:11:23 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/30 19:26:37 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/31 11:58:17 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 #include <limits.h>
 
-long	ft_atoi(char *str)
+long	ft_atoi(char *str, t_list **head)
 {
 	int		i;
 	long	res;
@@ -32,7 +32,7 @@ long	ft_atoi(char *str)
 	{
 		res = res * 10 + str[i] - 48;
 		if ((res > 2147483648 && s == -1) || (res > 2147483647 && s == 1))
-			(write(2, "Error\n", 6), exit(1));
+			(write(2, "Error\n", 6), clr_all(head), exit(1));
 		i++;
 	}
 	return (s * res);
