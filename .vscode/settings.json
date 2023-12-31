@@ -6,6 +6,7 @@
 		"ratio": "c",
 		"push_swap_bonus.h": "c",
 		"unistd.h": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"ostream": "c"
 	}
 }
