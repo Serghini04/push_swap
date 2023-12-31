@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:08:28 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/27 18:15:41 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/31 14:00:25 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	find_max(t_list **lst, t_list **clone, int *x)
 	max = i;
 	while (i)
 	{
-		if (max->data <= i->data)
+		if (max->data < i->data)
 			max = i;
 		i = i->next;
 	}

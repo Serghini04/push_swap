@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:06:58 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/31 11:56:56 by meserghi         ###   ########.fr       */
+/*   Updated: 2023/12/31 13:48:33 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ void	clean_split(char **arr)
 int	parsing(char *str, t_list **head)
 {
 	int		i;
-	long	nb;
 	char	**res;
 
 	i = 0;
@@ -95,8 +94,7 @@ int	parsing(char *str, t_list **head)
 			if (res[i][1] == '\0')
 				return (clean_split(res), clr_all(head), 0);
 		}
-		nb = ft_atoi(res[i], head, res);
-		add_back(head, new_node(nb));
+		add_back(head, new_node(ft_atoi(res[i], head, res)));
 		i++;
 	}
 	clean_split(res);
