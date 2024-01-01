@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:09:52 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/31 11:58:43 by meserghi         ###   ########.fr       */
+/*   Updated: 2024/01/01 15:09:26 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include "get_next_line/get_next_line.h"
 
 typedef struct s_list
@@ -79,9 +80,9 @@ int			usage_instra(t_instra **h, t_list **s_a, t_list **s_b);
 void		clr_instra(t_instra **h);
 t_instra	*new_instra(char *data);
 
-// ///you need to deleted..
-// void		print_lst(t_list *lst);
-// void		print_ind(t_list *h);
-// void		print_inst(t_instra *str);
+///you need to deleted..
+void		print_lst(t_list *lst);
+void		print_ind(t_list *h);
+void		print_inst(t_instra *str);
 
 #endif

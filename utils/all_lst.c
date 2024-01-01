@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 12:22:21 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/29 21:15:00 by meserghi         ###   ########.fr       */
+/*   Updated: 2024/01/01 15:07:44 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,23 +84,23 @@ t_list	*last_lst(t_list *lst)
 	return (lst);
 }
 
-// void print_ind(t_list *h)
-// {
-// 	while (h)
-// 	{
-// 		printf("x = %d	==>	data = %d\n", h->i, h->data);
-// 		h = h->next;
-// 	}
-// }
+void print_ind(t_list *h)
+{
+	while (h)
+	{
+		printf("x = %d	==>	data = %d\n", h->i, h->data);
+		h = h->next;
+	}
+}
 
-// void print_lst(t_list *lst)
-// {
-// 	t_list *i;
+void print_lst(t_list *lst)
+{
+	t_list *i;
 
-// 	i = lst;
-// 	while (i)
-// 	{
-// 		printf("%d\n", i->data);
-// 		i = i->next;
-// 	}
-// }
+	i = lst;
+	while (i)
+	{
+		printf("%d\n", i->data);
+		i = i->next;
+	}
+}
