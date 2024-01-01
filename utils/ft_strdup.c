@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 17:11:23 by meserghi          #+#    #+#             */
-/*   Updated: 2024/01/01 18:32:55 by meserghi         ###   ########.fr       */
+/*   Created: 2024/01/01 17:52:50 by meserghi          #+#    #+#             */
+/*   Updated: 2024/01/01 18:00:14 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-long	ft_atoi(char *str, t_list **head, char **fl)
+char	*ft_strdup(char *s1)
 {
+	char	*res;
+	int		len;
 	int		i;
-	long	res;
-	int		s;
 
 	i = 0;
-	res = 0;
-	s = 1;
-	if (str[i] == '+' || str[i] == '-')
+	len = 0;
+	while (s1[len])
+		len++;
+	res = malloc(len + 1);
+	if (!res)
+		return (NULL);
+	while (s1[i])
 	{
-		if (str[i] == '-')
-			s *= -1;
+		res[i] = ((char *)s1)[i];
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = res * 10 + str[i] - 48;
-		if ((res > 2147483648 && s == -1) || (res > 2147483647 && s == 1))
-			(write(2, "Error\n", 6), clr_all(head), clean_split(fl), exit(1));
-		i++;
-	}
-	return (s * res);
+	res[i] = '\0';
+	return (res);
 }

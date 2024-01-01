@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 19:14:57 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/30 18:46:48 by meserghi         ###   ########.fr       */
+/*   Updated: 2024/01/01 18:30:44 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,14 @@ void	read_all_arg(int pos, char **av, t_list **s_a)
 	while (i < pos)
 	{
 		if (parsing(av[i], s_a) == 0)
-			(write(2, "Error\n", 6), exit(-1));
+			(write(2, "Error\n", 6), exit(1));
 		i++;
 	}
 }
 
 void	add_instra(t_instra **h_ins)
 {
-	char		*instra;
+	char	*instra;
 
 	while (1)
 	{
@@ -94,13 +94,16 @@ int	main(int ac, char **av)
 		return (0);
 	read_all_arg(ac, av, &s_a);
 	if (!s_a || check_d(s_a) == 0)
-		(write(2, "Error\n", 6), clr_all(&s_a), exit(-1));
+		(write(2, "Error\n", 6), clr_all(&s_a), exit(1));
 	add_instra(&h_ins);
 	if (usage_instra(&h_ins, &s_a, &s_b) == 0)
-		(write(2, "Error\n", 6), exit(-1));
+		(write(2, "Error\n", 6), exit(1));
 	if (!s_b && if_sorted(s_a) == 1)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	return (clr_all(&s_a), clr_all(&s_b), clr_instra(&h_ins), 0);
+	clr_all(&s_a);
+	clr_all(&s_b);
+	clr_instra(&h_ins);
+	return (0);
 }

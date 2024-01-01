@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 13:45:39 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/30 18:31:05 by meserghi         ###   ########.fr       */
+/*   Updated: 2024/01/01 18:17:43 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	clr_instra(t_instra **h)
 	while (*h)
 	{
 		swap = (*h)->next;
+		free((*h)->data);
 		free(*h);
 		(*h) = swap;
 	}

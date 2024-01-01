@@ -6,7 +6,7 @@
 /*   By: meserghi <meserghi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/23 16:10:24 by meserghi          #+#    #+#             */
-/*   Updated: 2023/12/31 11:33:24 by meserghi         ###   ########.fr       */
+/*   Updated: 2024/01/01 18:29:50 by meserghi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int	main(int ac, char **av)
 	while (i < ac)
 	{
 		if (parsing(av[i], &head) == 0)
-			(write(2, "Error\n", 6), clr_all(&head), exit(-1));
+			(write(2, "Error\n", 6), clr_all(&head), exit(1));
 		i++;
 	}
 	if (!head || check_d(head) == 0)
-		(write(2, "Error\n", 6), clr_all(&head), exit(-1));
+		(write(2, "Error\n", 6), clr_all(&head), exit(1));
 	if (if_sorted(head) == 1)
-		(clr_all(&head), exit(-1));
+		(clr_all(&head), exit(1));
 	algo(&head, &s_b, size_lst(head));
 	clr_all(&head);
 	return (0);
