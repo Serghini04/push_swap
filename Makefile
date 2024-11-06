@@ -1,11 +1,11 @@
-SRC = instra/pa_pb.c instra/ra_rb.c instra/rra_rrb.c instra/sa_sb.c\
+SRC = instru/pa_pb.c instru/ra_rb.c instru/rra_rrb.c instru/sa_sb.c\
 	Algo/algo.c Algo/algo3.c Algo/algo4_5.c push_swap.c\
 	utils/all_lst.c utils/ft_split.c utils/ft_atoi.c utils/indexing.c\
 	utils/parsing.c
 
 SRC_BONUS = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c\
 		push_swap_bonus.c utils/ft_strcmp_bonus.c utils/all_lst.c utils/ft_split.c \
-		instra/pa_pb.c instra/ra_rb.c instra/rra_rrb.c instra/sa_sb.c utils/ft_strdup.c\
+		instru/pa_pb.c instru/ra_rb.c instru/rra_rrb.c instru/sa_sb.c utils/ft_strdup.c\
 		utils/ft_atoi.c utils/indexing.c utils/parsing.c utils/all_lst_bonus.c
 
 OBJ = ${SRC:.c=.o}
