@@ -17,12 +17,12 @@ A highly efficient number sorting project using two stacks, implementing Tshankx
 ## 🎯 Description
 Push_swap is a sorting algorithm project that requires sorting data on a stack, with a limited set of instructions, using the lowest possible number of actions. The program calculates and outputs the smallest sequence of operations needed to sort the input numbers.
 
-##⚡ Features
-✨ Efficient Sorting Algorithm
-📊 Stack Visualization Tool
-🔢 Handles Various Input Sizes
-⚠️ Comprehensive Error Handling
-📈 Performance Optimization
+## ⚡ Features
+- ✨ Efficient Sorting Algorithm
+- 📊 Stack Visualization Tool
+- 🔢 Handles Various Input Sizes
+- ⚠️ Comprehensive Error Handling
+- 📈 Performance Optimization
 
 ## 🛠️ Installation
 ```bash
@@ -79,6 +79,7 @@ python3 visualizer.py `./push_swap 4 67 3 87 23`
   - exit
 
 ## 🔍 Algorithm Overview
+
 ### 1. 📥 Input Analysis
    - Detect stack size
    - Calculate optimal chunks
@@ -137,5 +138,6 @@ ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG
 - Test with various input sizes
 - Check edge cases thoroughly
 - Use valgrind for memory checks
-
+  
+---
 This project is part of the School 1337 curriculum.
