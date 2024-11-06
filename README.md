@@ -1,5 +1,5 @@
 # 🔄 Push_swap
-A highly efficient number sorting project using two stacks, implementing Tshankx's algorithm. Part of the School 1337 cursus.
+A highly efficient number sorting project using two stacks. Part of the School 1337 cursus.
 
 ## 📋 Project Structure
 ```
